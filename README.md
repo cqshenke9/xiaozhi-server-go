@@ -241,3 +241,7 @@ swag init -g main.go
 ## 📄 License
 
 本仓库遵循 `Xiaozhi-server-go Open Source License`（基于 Apache 2.0 增强版）
+
+
+192.168.31.115
+192.168.1.3

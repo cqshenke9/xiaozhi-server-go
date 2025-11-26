@@ -229,7 +229,7 @@ func StartHttpServer(
 	logger.Debug("全局CORS中间件已配置，支持OPTIONS预检请求")
 
 	// API路由全部挂载到/api前缀下
-	apiGroup := router.Group("/api")
+	apiGroup := router.Group("/xiaozhi")
 
 	// 静态资源服务，前端访问 /web/xxx
 	router.Use(static.Serve("/", static.LocalFile("./web", true)))
@@ -237,7 +237,7 @@ func StartHttpServer(
 	// history 路由兜底，只处理 /web 下的 GET 请求
 	router.NoRoute(func(c *gin.Context) {
 		path := c.Request.URL.Path
-		if strings.HasPrefix(path, "/api") {
+		if strings.HasPrefix(path, "/xiaozhi") {
 			c.JSON(404, gin.H{"error": "api Not found"})
 			return
 		}
